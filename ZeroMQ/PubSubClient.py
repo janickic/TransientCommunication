@@ -9,8 +9,9 @@ print 'Server ip:', ip
 
 port = "8081"
 
-#  Prepare context and socket
+# Prepare context and socket
 context = zmq.Context()
+# Create SUB (subscribe) socket connection
 socket = context.socket(zmq.SUB)
 socket.setsockopt(zmq.SUBSCRIBE, '')
 socket.connect("tcp://%s:%s" % (ip, port))

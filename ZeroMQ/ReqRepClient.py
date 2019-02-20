@@ -9,8 +9,9 @@ print 'Server ip:', ip
 
 port = "5556"
 
-#  Prepare context and socket
+# zmq Prepare context and socket
 context = zmq.Context()
+# Create REQ (request) socket connection
 socket = context.socket(zmq.REQ)
 socket.connect("tcp://%s:%s" % (ip, port))
 
